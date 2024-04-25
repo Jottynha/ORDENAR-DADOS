@@ -1,19 +1,24 @@
-#include <iostream>
-#include <vector>
 #include "funcoes.hpp"
 
 using namespace std;
 
 int main() {
-    vector<int> arr = {5, 2, 9, 1, 6, 4, 3, 7, 8};
-
+    ofstream outfile("output.txt", ios_base::app);
+    char resp;
+    cout << "Deseja LIMPAR o Arquivo [S/N]: ";
+    cin >> resp;
+    resp = toupper(resp);
+    if(resp == 'S')
+        AlgoritmosSort::limparArq();
+    vector<int> arr = AlgoritmosSort::gerarVetor();
+    outfile << endl << "[MÉTODOS EM C++]" << endl;
     // Teste Selection Sort
     cout << "Array antes do Selection Sort:" << endl;
     for (int num : arr) {
         cout << num << " ";
     }
     cout << endl;
-    SortAlgorithms::selectionSort(arr);
+    AlgoritmosSort::selectionSort(arr);
     cout << "Array depois do Selection Sort:" << endl;
     for (int num : arr) {
         cout << num << " ";
@@ -27,7 +32,7 @@ int main() {
         cout << num << " ";
     }
     cout << endl;
-    SortAlgorithms::insertionSort(arr);
+    AlgoritmosSort::insertionSort(arr);
     cout << "Array depois do Insertion Sort:" << endl;
     for (int num : arr) {
         cout << num << " ";
@@ -41,12 +46,12 @@ int main() {
         cout << num << " ";
     }
     cout << endl;
-    SortAlgorithms::gnomeSort(arr);
+    AlgoritmosSort::gnomeSort(arr);
     cout << "Array depois do Gnome Sort:" << endl;
     for (int num : arr) {
         cout << num << " ";
     }
     cout << endl;
-
+    outfile.close();
     return 0;
 }

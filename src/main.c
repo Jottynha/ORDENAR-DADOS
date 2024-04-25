@@ -1,36 +1,53 @@
-#include <stdio.h>
 #include "funcoes.h"
 
 int main() {
-    int arr1[] = {64, 25, 12, 22, 11};
-    int arr2[] = {12, 11, 13, 5, 6};
-    int arr3[] = {34, 2, 10, -9, 20};
-    int n1 = sizeof(arr1) / sizeof(arr1[0]);
-    int n2 = sizeof(arr2) / sizeof(arr2[0]);
-    int n3 = sizeof(arr3) / sizeof(arr3[0]);
+    char resp;
+
+    printf("Deseja LIMPAR o Arquivo [S/N]: ");
+    scanf("%c", &resp);
+    resp = toupper(resp);
+    if(resp == 'S')
+        limparArquivo("output.txt");
+    int  tam, max;
+    printf("Digite o tamanho do array: ");
+    scanf("%d", &tam);
+    printf("Digite o valor máximo para os números aleatórios: ");
+    scanf("%d", &max);
+    // Aloca dinamicamente o array com o tamanho especificado pelo usuário
+    int *arr = (int *)malloc(tam * sizeof(int));
+    if (arr == NULL) {
+        printf("Erro ao alocar memória.\n");
+        return 1;
+    }
+    FILE *outfile = fopen("output.txt", "a");
+    fprintf(outfile, "[MÉTODOS EM C]\n");
+    fclose(outfile);
+
+    // Gera o array com números aleatórios
+    gerarArray(arr, tam, max);
 
     // Teste do Selection Sort
     printf("Teste do Selection Sort:\n");
-    selectionSort(arr1, n1);
+    selectionSort(arr, tam);
     printf("Array ordenado: ");
-    for (int i = 0; i < n1; i++)
-        printf("%d ", arr1[i]);
+    for (int i = 0; i < tam; i++)
+        printf("%d ", arr[i]);
     printf("\n");
 
     // Teste do Insertion Sort
     printf("\nTeste do Insertion Sort:\n");
-    insertionSort(arr2, n2);
+    insertionSort(arr, tam);
     printf("Array ordenado: ");
-    for (int i = 0; i < n2; i++)
-        printf("%d ", arr2[i]);
+    for (int i = 0; i < tam; i++)
+        printf("%d ", arr[i]);
     printf("\n");
 
     // Teste do Gnome Sort
     printf("\nTeste do Gnome Sort:\n");
-    gnomeSort(arr3, n3);
+    gnomeSort(arr, tam);
     printf("Array ordenado: ");
-    for (int i = 0; i < n3; i++)
-        printf("%d ", arr3[i]);
+    for (int i = 0; i < tam; i++)
+        printf("%d ", arr[i]);
     printf("\n");
 
     return 0;

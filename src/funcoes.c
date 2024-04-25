@@ -1,7 +1,19 @@
 #include "funcoes.h"
 
+void gerarArray(int arr[], int size, int maxNumber) {
+    srand(time(NULL));
+    for (int i = 0; i < size; i++) {
+        arr[i] = rand() % (maxNumber + 1);
+    }
+}
+
+
 void selectionSort(int arr[], int n) {
     int i, j, minIndex, temp;
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
+
     for (i = 0; i < n - 1; i++) {
         // Encontrando o índice do menor elemento não ordenado
         minIndex = i;
@@ -15,10 +27,21 @@ void selectionSort(int arr[], int n) {
         arr[i] = arr[minIndex];
         arr[minIndex] = temp;
     }
+
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+
+    FILE *outfile = fopen("output.txt", "a");
+    fprintf(outfile, "[ Tempo de execução do Selection Sort ] : [ %f segundos ]\n", cpu_time_used);
+    fclose(outfile);
 }
 
 void insertionSort(int arr[], int n) {
     int i, temp, j;
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
+
     for (i = 1; i < n; i++) {
         // Armazenando o elemento atual para inserção na posição correta
         temp = arr[i];
@@ -31,10 +54,20 @@ void insertionSort(int arr[], int n) {
         // Inserindo temp na posição correta no subarray ordenado
         arr[j + 1] = temp;
     }
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+
+    FILE *outfile = fopen("output.txt", "a");
+    fprintf(outfile, "[ Tempo de execução do Insertion Sort ] : [ %f segundos ]\n", cpu_time_used);
+    fclose(outfile);
 }
 
 void gnomeSort(int arr[], int n) {
     int index = 0;
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
+
     while (index < n) {
         // Verificando se é necessário mover para o próximo elemento
         if (index == 0)
@@ -50,4 +83,16 @@ void gnomeSort(int arr[], int n) {
             index--;
         }
     }
+
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+
+    FILE *outfile = fopen("output.txt", "a");
+    fprintf(outfile, "[ Tempo de execução do Gnome Sort ] : [ %f segundos ]\n", cpu_time_used);
+    fclose(outfile);
+}
+
+void limparArquivo(const char *filename) {
+    FILE *file = fopen(filename, "w"); // Abre o arquivo em modo de escrita, o que limpa seu conteúdo
+    fclose(file);
 }

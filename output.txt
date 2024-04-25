@@ -1,0 +1,5 @@
+
+[MÉTODO EM PYTHON]
+[ Tempo de execução do Selection Sort ] : [ 0.001275 segundos ]
+[ Tempo de execução do Insertion Sort ] : [ 0.000024 segundos ]
+[ Tempo de execução do Gnome Sort ] : [ 0.000029 segundos ]
