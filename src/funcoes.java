@@ -34,7 +34,7 @@ public class funcoes {
         }
         long tempFim = System.nanoTime();
         double tempoTotal = (tempFim - tempIni) / 1e9;
-        writer.write("Tempo de execução do Selection Sort: " + tempoTotal + " nanosegundos");
+        writer.write("Tempo de execução do Selection Sort: " + tempoTotal + " segundos\n");
 
 
         return tempoTotal;
@@ -55,7 +55,7 @@ public class funcoes {
         }
         long tempFim = System.nanoTime();
         double tempoTotal = (tempFim - tempIni) / 1e9;
-        writer.write("Tempo de execução do Insertion Sort: " + tempoTotal + " nanosegundos");
+        writer.write("Tempo de execução do Insertion Sort: " + tempoTotal + " segundos\n");
 
 
         return tempoTotal;
@@ -81,7 +81,7 @@ public class funcoes {
         }
         long tempFim = System.nanoTime();
         double tempoTotal = (tempFim - tempIni) / 1e9;
-        writer.write("Tempo de execução do Gnome Sort: " + tempoTotal + " nanosegundos");
+        writer.write("Tempo de execução do Gnome Sort: " + tempoTotal + " segundos\n");
 
 
         return tempoTotal;

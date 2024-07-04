@@ -1,7 +1,0 @@
-
-[ TEMPO DE EXECUÇÃO EM JAVA ]
-Tempo de execução do Selection Sort: 5.208E-6 nanosegundos
-[ TEMPO DE EXECUÇÃO EM JAVA ]
-Tempo de execução do Insertion Sort: 1.1058E-5 nanosegundos
-[ TEMPO DE EXECUÇÃO EM JAVA ]
-Tempo de execução do Gnome Sort: 1.1684E-5 nanosegundos
