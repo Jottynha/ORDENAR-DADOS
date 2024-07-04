@@ -7,7 +7,6 @@ void gerarArray(int arr[], int size, int maxNumber) {
     }
 }
 
-
 void selectionSort(int arr[], int n) {
     int i, j, minIndex, temp;
     clock_t start, end;

@@ -1,6 +1,13 @@
 {
     "configurations": [
         {
+            "type": "java",
+            "name": "funcoes",
+            "request": "launch",
+            "mainClass": "funcoes",
+            "projectName": "ORDENAR-DADOS_a082d8a7"
+        },
+        {
             "name": "C/C++: g++ Compilar e depurar o arquivo ativo",
             "type": "cppdbg",
             "request": "launch",

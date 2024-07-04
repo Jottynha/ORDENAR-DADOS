@@ -27,20 +27,20 @@ int main() {
     gerarArray(arr, tam, max);
 
     // Teste do Selection Sort
-    printf("Teste do Selection Sort:\n");
-    selectionSort(arr, tam);
-    printf("Array ordenado: ");
-    for (int i = 0; i < tam; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
+    //printf("Teste do Selection Sort:\n");
+    //selectionSort(arr, tam);
+    //printf("Array ordenado: ");
+    //for (int i = 0; i < tam; i++)
+    //    printf("%d ", arr[i]);
+    //printf("\n");
 
     // Teste do Insertion Sort
-    printf("\nTeste do Insertion Sort:\n");
-    insertionSort(arr, tam);
-    printf("Array ordenado: ");
-    for (int i = 0; i < tam; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
+    //printf("\nTeste do Insertion Sort:\n");
+    //insertionSort(arr, tam);
+    //printf("Array ordenado: ");
+    //for (int i = 0; i < tam; i++)
+    //    printf("%d ", arr[i]);
+    //printf("\n");
 
     // Teste do Gnome Sort
     printf("\nTeste do Gnome Sort:\n");

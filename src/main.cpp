@@ -18,7 +18,7 @@ int main() {
         cout << num << " ";
     }
     cout << endl;
-    AlgoritmosSort::selectionSort(arr);
+    //AlgoritmosSort::selectionSort(arr);
     cout << "Array depois do Selection Sort:" << endl;
     for (int num : arr) {
         cout << num << " ";
@@ -26,13 +26,12 @@ int main() {
     cout << endl << endl;
 
     // Teste Insertion Sort
-    arr = {5, 2, 9, 1, 6, 4, 3, 7, 8};
     cout << "Array antes do Insertion Sort:" << endl;
     for (int num : arr) {
         cout << num << " ";
     }
     cout << endl;
-    AlgoritmosSort::insertionSort(arr);
+    //AlgoritmosSort::insertionSort(arr);
     cout << "Array depois do Insertion Sort:" << endl;
     for (int num : arr) {
         cout << num << " ";
@@ -40,7 +39,6 @@ int main() {
     cout << endl << endl;
 
     // Teste Gnome Sort
-    arr = {5, 2, 9, 1, 6, 4, 3, 7, 8};
     cout << "Array antes do Gnome Sort:" << endl;
     for (int num : arr) {
         cout << num << " ";
