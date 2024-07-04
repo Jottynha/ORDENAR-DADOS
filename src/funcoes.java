@@ -18,7 +18,7 @@ public class funcoes {
         return vetor;
     }
 
-    public long selectionSort(int[] vetor, FileWriter writer) throws IOException {
+    public double selectionSort(int[] vetor, FileWriter writer) throws IOException {
         long tempIni = System.nanoTime();
         int n = vetor.length;
         for (int i = 0; i < n - 1; i++) {
@@ -33,15 +33,14 @@ public class funcoes {
             vetor[i] = temp;
         }
         long tempFim = System.nanoTime();
-        long tempoTotal = tempFim - tempIni;
-        writer.write("\n[ TEMPO DE EXECUÇÃO EM JAVA ]\n");
-        writer.write("Tempo de execução do Selection Sort: " + tempoTotal + " nanosegundos\n");
+        double tempoTotal = (tempFim - tempIni) / 1e9;
+        writer.write("Tempo de execução do Selection Sort: " + tempoTotal + " nanosegundos");
 
 
         return tempoTotal;
     }
 
-    public long insertionSort(int[] vetor, FileWriter writer) throws IOException  {
+    public double insertionSort(int[] vetor, FileWriter writer) throws IOException  {
         long tempIni = System.nanoTime();
         int n = vetor.length;
         for (int i = 1; i < n; ++i) {
@@ -55,15 +54,14 @@ public class funcoes {
             vetor[j + 1] = chave;
         }
         long tempFim = System.nanoTime();
-        long tempoTotal = tempFim - tempIni;
-        writer.write("\n[ TEMPO DE EXECUÇÃO EM JAVA ]\n");
-        writer.write("Tempo de execução do Insertion Sort: " + tempoTotal + " nanosegundos\n");
+        double tempoTotal = (tempFim - tempIni) / 1e9;
+        writer.write("Tempo de execução do Insertion Sort: " + tempoTotal + " nanosegundos");
 
 
         return tempoTotal;
     }
 
-    public long gnomeSort(int[] vetor, FileWriter writer) throws IOException   {
+    public double gnomeSort(int[] vetor, FileWriter writer) throws IOException   {
         long tempIni = System.nanoTime();
         int n = vetor.length;
         int index = 0;
@@ -82,9 +80,8 @@ public class funcoes {
             }
         }
         long tempFim = System.nanoTime();
-        long tempoTotal = tempFim - tempIni;
-        writer.write("\n[ TEMPO DE EXECUÇÃO EM JAVA ]\n");
-        writer.write("Tempo de execução do Gnome Sort: " + tempoTotal + " nanosegundos\n");
+        double tempoTotal = (tempFim - tempIni) / 1e9;
+        writer.write("Tempo de execução do Gnome Sort: " + tempoTotal + " nanosegundos");
 
 
         return tempoTotal;

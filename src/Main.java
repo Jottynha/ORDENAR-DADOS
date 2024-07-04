@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,13 +24,23 @@ public class Main {
 
         int[] vetor = sorter.gerarVetorAleatorio(tamanho, valorMaximo);
 
+        System.out.println("\nVetor Desordenado:");
+        System.out.println(Arrays.toString(vetor));
+
         try (FileWriter writer = new FileWriter("output.txt")) {
+            writer.write("\n[ TEMPO DE EXECUÇÃO EM JAVA ]\n");
             int[] vetorCopia = vetor.clone();
             sorter.selectionSort(vetorCopia, writer);
+            System.out.println("\nVetor Ordenado com Selection Sort:");
+            System.out.println(Arrays.toString(vetorCopia));
             vetorCopia = vetor.clone();
             sorter.insertionSort(vetorCopia, writer);
+            System.out.println("\nVetor Ordenado com Insertion Sort:");
+            System.out.println(Arrays.toString(vetorCopia));
             vetorCopia = vetor.clone();
             sorter.gnomeSort(vetorCopia, writer);
+            System.out.println("\nVetor Ordenado com Gnome Sort:");
+            System.out.println(Arrays.toString(vetorCopia));
          } 
         }catch (IOException e) {
             e.printStackTrace();
