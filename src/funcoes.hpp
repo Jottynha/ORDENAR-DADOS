@@ -14,7 +14,7 @@ public:
     static void selectionSort(vector<int>& arr);
     static void insertionSort(vector<int>& arr);
     static void gnomeSort(vector<int>& arr);
-    static vector<int> gerarVetor();
+    static vector<int> lerArq(const string& nomeArquivo, int tamanhoVetor);
 private:
     static void swap(int& a, int& b);
 };

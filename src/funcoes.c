@@ -1,10 +1,33 @@
 #include "funcoes.h"
 
-void gerarArray(int arr[], int size, int maxNumber) {
-    srand(time(NULL));
-    for (int i = 0; i < size; i++) {
-        arr[i] = rand() % (maxNumber + 1);
+int* lerArq(const char* nome_arquivo, int tamanho_vetor) {
+    FILE* arquivo = fopen(nome_arquivo, "r");
+    if (arquivo == NULL) {
+        fprintf(stderr, "Erro ao abrir o arquivo.\n");
+        return NULL;
     }
+
+    int* vetor = (int*)malloc(tamanho_vetor * sizeof(int));
+    if (vetor == NULL) {
+        fprintf(stderr, "Erro ao alocar memória.\n");
+        fclose(arquivo);
+        return NULL;
+    }
+
+    int numero, i = 0;
+    while (fscanf(arquivo, "%d", &numero) == 1 && i < tamanho_vetor) {
+        vetor[i] = numero;
+        i++;
+    }
+
+    fclose(arquivo);
+
+    // Se menos números foram lidos do que o tamanho desejado do vetor
+    if (i < tamanho_vetor) {
+        vetor = (int*)realloc(vetor, i * sizeof(int));
+    }
+
+    return vetor;
 }
 
 void selectionSort(int arr[], int n) {

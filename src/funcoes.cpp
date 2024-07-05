@@ -87,22 +87,19 @@ void AlgoritmosSort::gnomeSort(vector<int>& arr) {
     outfile.close();
 }
 
-vector<int> AlgoritmosSort::gerarVetor() {
-    int tam, max;
-    cout << "Digite o tamanho do vetor: ";
-    cin >> tam;
-    cout << "Digite o valor máximo para os números aleatórios: ";
-    cin >> max;
-    vector<int> vec;
-    // Inicializa o gerador de números aleatórios
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<int> dis(0, max);
-
-    // Preenche o vetor com números inteiros aleatórios
-    for (int i = 0; i < tam; ++i) {
-        vec.push_back(dis(gen));
+vector<int> AlgoritmosSort::lerArq(const string& nomeArquivo, int tamanhoVetor) {
+    ifstream arquivo(nomeArquivo);
+    if (!arquivo.is_open()) {
+        cerr << "Erro ao abrir o arquivo." << endl;
+        return {};
     }
 
-    return vec;
+    vector<int> vetor;
+    int numero;
+    while (arquivo >> numero && static_cast<int>(vetor.size()) < tamanhoVetor) {
+        vetor.push_back(numero);
+    }
+
+    arquivo.close();
+    return vetor;
 }

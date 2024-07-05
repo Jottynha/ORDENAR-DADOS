@@ -8,11 +8,11 @@ int main() {
     resp = toupper(resp);
     if(resp == 'S')
         limparArquivo("output.txt");
-    int  tam, max;
+
+    int  tam;
     printf("Digite o tamanho do array: ");
     scanf("%d", &tam);
-    printf("Digite o valor máximo para os números aleatórios: ");
-    scanf("%d", &max);
+
     // Aloca dinamicamente o array com o tamanho especificado pelo usuário
     int *arr = (int *)malloc(tam * sizeof(int));
     if (arr == NULL) {
@@ -23,8 +23,8 @@ int main() {
     fprintf(outfile, "[MÉTODOS EM C]\n");
     fclose(outfile);
 
-    gerarArray(arr, tam, max);
-
+    arr = lerArq("input.txt",tam);
+    
     // Teste do Selection Sort
     printf("Teste do Selection Sort:\n");
     selectionSort(arr, tam);
@@ -33,6 +33,8 @@ int main() {
         printf("%d ", arr[i]);
     printf("\n");
 
+    arr = lerArq("input.txt",tam);
+
     // Teste do Insertion Sort
     printf("\nTeste do Insertion Sort:\n");
     insertionSort(arr, tam);
@@ -40,6 +42,8 @@ int main() {
     for (int i = 0; i < tam; i++)
         printf("%d ", arr[i]);
     printf("\n");
+
+    arr = lerArq("input.txt",tam);
 
     // Teste do Gnome Sort
     printf("\nTeste do Gnome Sort:\n");
@@ -51,3 +55,4 @@ int main() {
 
     return 0;
 }
+

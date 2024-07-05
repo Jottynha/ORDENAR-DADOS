@@ -49,12 +49,20 @@ def gnome_sort(arr):
     with open("output.txt", "a") as f:
         f.write("[ Tempo de execução do Gnome Sort ] : [ {:.6f} segundos ]\n".format(elapsed_time))
 
-def gerarArray():
-    size = int(input("Digite o tamanho do array: "))
-    max_num = int(input("Digite o valor máximo para os números aleatórios: "))
-    # Gera um array com números inteiros aleatórios no intervalo de 0 ao valor máximo especificado
-    random_array = [random.randint(0, max_num) for _ in range(size)]
-    return random_array
+def lerArq(nome_arquivo, tamanho_vetor):
+    try:
+        with open(nome_arquivo, 'r') as arquivo:
+            numeros = []
+            for linha in arquivo:
+                if len(numeros) < tamanho_vetor:
+                    numero = int(linha.strip())
+                    numeros.append(numero)
+                else:
+                    break
+        return numeros
+    except FileNotFoundError:
+        print("Erro ao abrir o arquivo.")
+        return []
 
 def limparArq():
     while True:

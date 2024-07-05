@@ -19,15 +19,12 @@ public class Main {
         System.out.print("Digite o tamanho do vetor: ");
         int tamanho = scanner.nextInt();
 
-        System.out.print("Digite o valor máximo dos elementos: ");
-        int valorMaximo = scanner.nextInt();
-
-        int[] vetor = sorter.gerarVetorAleatorio(tamanho, valorMaximo);
+        int[] vetor = sorter.lerArq("input.txt",tamanho);
 
         System.out.println("\nVetor Desordenado:");
         System.out.println(Arrays.toString(vetor));
 
-        try (FileWriter writer = new FileWriter("output.txt")) {
+        try (FileWriter writer = new FileWriter("output.txt",true)) {
             writer.write("\n[ TEMPO DE EXECUÇÃO EM JAVA ]\n");
             int[] vetorCopia = vetor.clone();
             sorter.selectionSort(vetorCopia, writer);

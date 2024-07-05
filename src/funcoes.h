@@ -16,6 +16,7 @@ void gnomeSort(int arr[], int n);
 
 void limparArquivo(const char *filename);
 
-void gerarArray(int arr[], int size, int maxNumber);
+int* lerArq(const char* nome_arquivo, int tamanho_vetor); 
+
 
 #endif /* FUNCOES_H */
