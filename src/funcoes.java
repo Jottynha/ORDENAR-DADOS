@@ -8,11 +8,9 @@ public class funcoes {
         writer.write("");
         writer.close();
     }
-
     public int[] lerArq(String nomeArquivo, int tamanhoVetor) {
         int[] numeros = new int[tamanhoVetor];
         int count = 0;
-
         try (BufferedReader reader = new BufferedReader(new FileReader(nomeArquivo))) {
             String linha;
             while ((linha = reader.readLine()) != null && count < tamanhoVetor) {
@@ -27,17 +25,14 @@ public class funcoes {
         } catch (IOException e) {
             System.err.println("Erro ao abrir o arquivo: " + e.getMessage());
         }
-
         // Caso não tenha preenchido todo o array, redimensiona para o tamanho real
         if (count < tamanhoVetor) {
             int[] numerosReduzidos = new int[count];
             System.arraycopy(numeros, 0, numerosReduzidos, 0, count);
             return numerosReduzidos;
         }
-
         return numeros;
     }
-
     public double selectionSort(int[] vetor, FileWriter writer) throws IOException {
         long tempIni = System.nanoTime();
         int n = vetor.length;

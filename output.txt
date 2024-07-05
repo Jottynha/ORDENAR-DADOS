@@ -1,10 +1,10 @@
 
 [MÉTODO EM PYTHON]
-[ Tempo de execução do Selection Sort ] : [ 0.120977 segundos ]
-[ Tempo de execução do Insertion Sort ] : [ 0.063864 segundos ]
-[ Tempo de execução do Gnome Sort ] : [ 0.175609 segundos ]
+[ Tempo de execução do Selection Sort ] : [ 6.408067 segundos ]
+[ Tempo de execução do Insertion Sort ] : [ 6.186486 segundos ]
+[ Tempo de execução do Gnome Sort ] : [ 18.426838 segundos ]
 
-[ TEMPO DE EXECUÇÃO EM JAVA ]
-Tempo de execução do Selection Sort: 0.188924125 segundos
-Tempo de execução do Insertion Sort: 0.138512174 segundos
-Tempo de execução do Gnome Sort: 0.164555326 segundos
+[MÉTODOS EM C++]
+[ Tempo de execução do Selection Sort ] : [ 6.54e-07 segundos ]
+[ Tempo de execução do Insertion Sort ] : [ 1.27e-07 segundos ]
+[ Tempo de execução do Gnome Sort ] : [ 1.31e-07 segundos ] 

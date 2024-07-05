@@ -6,7 +6,6 @@ int* lerArq(const char* nome_arquivo, int tamanho_vetor) {
         fprintf(stderr, "Erro ao abrir o arquivo.\n");
         return NULL;
     }
-
     int* vetor = (int*)malloc(tamanho_vetor * sizeof(int));
     if (vetor == NULL) {
         fprintf(stderr, "Erro ao alocar memória.\n");
@@ -19,14 +18,11 @@ int* lerArq(const char* nome_arquivo, int tamanho_vetor) {
         vetor[i] = numero;
         i++;
     }
-
     fclose(arquivo);
-
     // Se menos números foram lidos do que o tamanho desejado do vetor
     if (i < tamanho_vetor) {
         vetor = (int*)realloc(vetor, i * sizeof(int));
     }
-
     return vetor;
 }
 

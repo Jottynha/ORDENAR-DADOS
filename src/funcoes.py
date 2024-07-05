@@ -1,5 +1,4 @@
 import time
-import random
 def selection_sort(arr):
     start_time = time.time()
     n = len(arr)
